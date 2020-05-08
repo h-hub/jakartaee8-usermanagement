@@ -15,3 +15,7 @@ Since this project is using libery maven plugin, yu can run "mvn liberty:dev" to
 DB schema is included in the project repo.
 
 Edit the MailingService to implement the email functionalities.
+
+
+http://dplatz.de/blog/2018/heroku.html
+https://devcenter.heroku.com/articles/heroku-ci
