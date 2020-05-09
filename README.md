@@ -18,4 +18,7 @@ Edit the MailingService to implement the email functionalities.
 
 
 http://dplatz.de/blog/2018/heroku.html
+
 https://devcenter.heroku.com/articles/heroku-ci
+
+https://medium.com/nexton/deploying-docker-images-to-heroku-with-circleci-713c764e248d

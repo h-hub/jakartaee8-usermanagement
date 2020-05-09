@@ -6,3 +6,9 @@ jobs:
       script: mvn test -B
     - stage: Build docker image
       script: mvn clean package && docker build -t usermanagement .
+    - stage: Push image to heroku
+      script: 
+        sudo curl https://cli-assets.heroku.com/install.sh | sh
+        HEROKU_API_KEY=$HEROKU_AUTH_TOKEN heroku container:login
+        HEROKU_API_KEY=$HEROKU_AUTH_TOKEN heroku container:push -a usermanagement web
+        HEROKU_API_KEY=$HEROKU_AUTH_TOKEN heroku container:release -a usermanagement web
