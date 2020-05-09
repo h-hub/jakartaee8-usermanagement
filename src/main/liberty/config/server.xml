@@ -24,8 +24,8 @@
     <dataSource id="mysqldatasource"
                     jndiName="jdbc/user_management_db">
         <jdbcDriver libraryRef="MySQLLib" />
-        <properties databaseName="user_management_db"
-                            serverName="localhost" password="admin1234" user="root"
+        <properties databaseName="heroku_784f366ebc994e8"
+                            serverName="us-cdbr-east-06.cleardb.net" password="f657499b" user="bd8547f8d0c843"
                             serverTimezone="UTC" portNumber="3306" />
     </dataSource>
 
