@@ -1,1 +1,8 @@
 language: java
+
+jobs:
+  include:
+    - stage: Test
+      script: mvn test -B
+    - stage: Build docker image
+      script: ./buildAndUpload.sh
