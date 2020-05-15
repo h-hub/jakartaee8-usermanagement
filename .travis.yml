@@ -3,7 +3,7 @@ before_install:
   -in jakartaee8-usrmgmt-ef18fa077c57.json.enc -out .\\jakartaee8-usrmgmt-ef18fa077c57.json
   -d
 
-  language: java
+language: java
 
 jobs:
   include:
