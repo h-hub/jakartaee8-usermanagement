@@ -6,5 +6,4 @@ jobs:
       script: mvn test -B
     - stage: Push image to heroku
       script: 
-      - mvn clean package
-      - gcloud auth configure-docker
+      - gcloud auth login
