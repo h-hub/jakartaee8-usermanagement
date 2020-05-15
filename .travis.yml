@@ -1,4 +1,9 @@
-language: java
+before_install:
+- openssl aes-256-cbc -K $encrypted_3e9a65cf8c25_key -iv $encrypted_3e9a65cf8c25_iv
+  -in jakartaee8-usrmgmt-ef18fa077c57.json.enc -out .\\jakartaee8-usrmgmt-ef18fa077c57.json
+  -d
+
+  language: java
 
 jobs:
   include:
