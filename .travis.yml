@@ -13,5 +13,5 @@ jobs:
       script: 
       - mvn package
       - gcloud auth activate-service-account harsha@jakartaee8-usrmgmt.iam.gserviceaccount.com --key-file=jakartaee8-usrmgmt-ef18fa077c57.json
-      - docker build tag asia.gcr.io/jakartaee8-usrmgmt/usermanagement .
+      - docker build -t asia.gcr.io/jakartaee8-usrmgmt/usermanagement .
       - docker push asia.gcr.io/jakartaee8-usrmgmt/usermanagement
