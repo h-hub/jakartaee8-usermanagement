@@ -13,6 +13,3 @@ jobs:
       script: 
       - gcloud auth activate-service-account harsha@jakartaee8-usrmgmt.iam.gserviceaccount.com --key-file=jakartaee8-usrmgmt-ef18fa077c57.json
       - gcloud auth configure-docker
-      - docker build -t usermanagement .
-      - docker tag usermanagement asia.gcr.io/jakartaee8-usrmgmt/usermanagement
-      - docker push asia.gcr.io/jakartaee8-usrmgmt/usermanagement
