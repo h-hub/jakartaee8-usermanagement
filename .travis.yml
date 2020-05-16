@@ -9,6 +9,8 @@ jobs:
   include:
     - stage: Test
       script: mvn test -B
-    - stage: Push image to heroku
+    - stage: Push image to GCP
       script: 
+      - mvn packge
       - gcloud auth activate-service-account harsha@jakartaee8-usrmgmt.iam.gserviceaccount.com --key-file=jakartaee8-usrmgmt-ef18fa077c57.json
+      - docker build -t usermanagement .
