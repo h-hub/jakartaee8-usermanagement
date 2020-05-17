@@ -3,8 +3,9 @@ before_install:
   -in jakartaee8-usrmgmt-ef18fa077c57.json.enc -out jakartaee8-usrmgmt-ef18fa077c57.json
   -d
 before_script:
-- curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.7.0/bin/linux/amd64/kubectl && \
-    chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+ - curl https://sdk.cloud.google.com | bash > /dev/null
+ - source $HOME/google-cloud-sdk/path.bash.inc
+ - gcloud components install kubectl
     
 language: java
 
