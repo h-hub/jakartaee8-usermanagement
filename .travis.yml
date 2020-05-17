@@ -17,3 +17,6 @@ jobs:
       - cat jakartaee8-usrmgmt-ef18fa077c57.json | docker login -u _json_key --password-stdin https://asia.gcr.io
       - docker build -t asia.gcr.io/jakartaee8-usrmgmt/usermanagement .
       - docker push asia.gcr.io/jakartaee8-usrmgmt/usermanagement
+    - stage: Deploy to App Engine
+      script: 
+      - gcloud app deploy --image-url=asia.gcr.io/jakartaee8-usrmgmt/usermanagement:latest
