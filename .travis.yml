@@ -14,7 +14,6 @@ jobs:
       - mvn package
       - gcloud auth activate-service-account harsha@jakartaee8-usrmgmt.iam.gserviceaccount.com --key-file=jakartaee8-usrmgmt-ef18fa077c57.json
       - gcloud --quiet config set compute/zone "asia-southeast1"
-      - gcloud builds submit --tag asia.gcr.io/jakartaee8-usrmgmt/usermanagement
-      # - gcloud auth configure-docker
-      # - docker build -t asia.gcr.io/jakartaee8-usrmgmt/usermanagement .
-      # - gcloud docker push asia.gcr.io/jakartaee8-usrmgmt/usermanagement
+      - gcloud auth configure-docker asia.gcr.io
+      - docker build -t asia.gcr.io/jakartaee8-usrmgmt/usermanagement .
+      - gcloud docker push asia.gcr.io/jakartaee8-usrmgmt/usermanagement
