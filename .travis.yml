@@ -15,12 +15,12 @@ jobs:
       - gcloud auth activate-service-account harsha@jakartaee8-usrmgmt.iam.gserviceaccount.com --key-file=jakartaee8-usrmgmt-ef18fa077c57.json
       - gcloud --quiet config set compute/zone "asia-southeast1"
       - cat jakartaee8-usrmgmt-ef18fa077c57.json | docker login -u _json_key --password-stdin https://asia.gcr.io
-      - docker build -t asia.gcr.io/jakartaee8-usrmgmt/usermanagement .
-      - docker push asia.gcr.io/jakartaee8-usrmgmt/usermanagement:$TRAVIS_COMMIT
+      - docker build -t asia.gcr.io/jakartaee8-usrmgmt/usermanagement:$TRAVIS_BUILD_NUMBER .
+      - docker push asia.gcr.io/jakartaee8-usrmgmt/usermanagement:$TRAVIS_BUILD_NUMBER
     - stage: Deploy to Kubernetes
       script: 
       - gcloud auth activate-service-account harsha@jakartaee8-usrmgmt.iam.gserviceaccount.com --key-file=jakartaee8-usrmgmt-ef18fa077c57.json
-      - kubectl create deployment usrmgmt-web --image=asia.gcr.io/jakartaee8-usrmgmt/usermanagement:$TRAVIS_COMMIT
+      - kubectl create deployment usrmgmt-web --image=asia.gcr.io/jakartaee8-usrmgmt/usermanagement:$TRAVIS_BUILD_NUMBER
       - kubectl get pods
     - stage: Expose to internet
       script: 
